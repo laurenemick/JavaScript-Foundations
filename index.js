@@ -110,18 +110,18 @@ function mortgageCalculator2(P, I, N, CS){
     let years = N;
     let name = "Lauren";
 
-    let monthlyInterestRate = interestRate / 12;
     let periods = years * 12;
 
     if (CS > 740){
+        let monthlyInterestRate = (interestRate / 12) * 0.95;
         let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
         let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
         let total = principal * (numerator / denominator);
         let monthlyRate = total.toFixed(2);
 
-        monthlyInterestRate = monthlyInterestRate * 0.95;
         return name + " your monthly rate is $" + monthlyRate;
     } else if (CS < 660){
+        let monthlyInterestRate = (interestRate / 12) * 1.05;
         let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
         let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
         let total = principal * (numerator / denominator);
@@ -130,6 +130,7 @@ function mortgageCalculator2(P, I, N, CS){
         monthlyInterestRate = monthlyInterestRate * 1.05;
         return name + " your monthly rate is $" + monthlyRate;
     } else {
+        let monthlyInterestRate = interestRate / 12;
         let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
         let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
         let total = principal * (numerator / denominator);
@@ -139,7 +140,7 @@ function mortgageCalculator2(P, I, N, CS){
     }
 }
 
-console.log(mortgageCalculator2(200000, 0.05, 30, 600));
+console.log(mortgageCalculator2(200000, 0.05, 30, 60));
 
 
 // 🏡 Task 6: Loops
