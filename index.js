@@ -166,7 +166,6 @@ function variableInterestRate(P, I, N) {
     let years = N;
     let name = "Lauren";
     
-
     for (i = 0; i < 9; i++) {
         let monthlyInterestRate = interestRate / 12;
         let periods = years * 12;
