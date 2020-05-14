@@ -159,12 +159,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+const P = Number(window.prompt("What is your principle?", ""));
+const N = Number(window.prompt("How many years?", ""));
+const I = Number(window.prompt("Interest rate?", ""));
+const FN = (window.prompt("What is your name?", ""));
 
-function variableInterestRate(P, I, N) {
+function variableInterestRate(P, I, N, FN) {
     let principal = P;
     let interestRate = I - .02;
     let years = N;
-    let name = "Lauren";
+    let name = FN;
     
     for (i = 0; i < 9; i++) {
         let monthlyInterestRate = interestRate / 12;
@@ -175,24 +179,29 @@ function variableInterestRate(P, I, N) {
         let total = principal * (numerator / denominator);
         let monthlyRate = total.toFixed(2);
 
-        console.log(name + ', with an interest rate of ' + interestRate.toFixed(3) + ', your monthly rate is ' + Math.round(monthlyRate));
+        window.alert(name + ', with an interest rate of ' + interestRate.toFixed(3) + ', your monthly rate is ' + Math.round(monthlyRate));
         interestRate = interestRate + 0.005;
     }
 }
-console.log(variableInterestRate(200000, 0.04, 30));
+
+console.log(variableInterestRate(P, I, N, FN));
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
-/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
+/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these 
+may require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate
+ total monthly spending on housing */
 
 
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum
+ loan that a person could afford */
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to
+     copy and paste as to not lose your work!) */
